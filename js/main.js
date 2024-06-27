@@ -12,15 +12,23 @@ createApp({
     },
     methods: {
         // functions
+        generateTenEmails(){
+            for(let i = 0; i < 10; i++){
+                axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+                .then((axiosEmail)=>{
+                        const result = axiosEmail.data.response;
+                        console.log(result);
+                    
+                })
+            }
+    
 
+            }
     },
     mounted(){
         // mounted
-        axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-        .then((axiosEmail)=>{
-            const result = axiosEmail.data.response;
-            console.log(result);
-        })
+        this.generateTenEmails()
+        
         
     }
 }).mount('#app');
