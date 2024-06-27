@@ -5,7 +5,7 @@ createApp({
     data() {
         return {
             // data
-            email : '',
+            emails : [],
 
 
         };
@@ -16,8 +16,10 @@ createApp({
             for(let i = 0; i < 10; i++){
                 axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
                 .then((axiosEmail)=>{
-                        const result = axiosEmail.data.response;
+                        let result = axiosEmail.data.response;
                         console.log(result);
+                        this.emails.push(result);
+                        console.log(this.emails)
                     
                 })
             }
