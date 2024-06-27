@@ -32,8 +32,8 @@
     
     <div id="app">
 
-        <ul>
-            <li v-for='email in emails'>{{email}}</li>
+        <ul v-if="emails[9]">
+            <li v-for='email in emails' >{{email}}</li>
         </ul>
 
     </div>
